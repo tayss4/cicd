@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Fiap.Web.Trafego.Models.Previsao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PrevisaoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MelhorAlternativa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroCarros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CruzamentoId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrevisaoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MelhorAlternativa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroCarros)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CruzamentoId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
